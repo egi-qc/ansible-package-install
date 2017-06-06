@@ -1,3 +1,4 @@
 ---
 dependencies:
   - { role: 'umd' }
+  - { role: 'cmd' }
