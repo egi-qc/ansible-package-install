@@ -2,6 +2,6 @@
   version: master
   name: cmd
 
-- src: https://github.com/orviz/ansible-role-umd
+- src: https://github.com/egi-qc/ansible-role-umd
   version: master
   name: umd
