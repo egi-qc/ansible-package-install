@@ -12,5 +12,5 @@
     state: latest
   with_items:
     - "{{ pkg_list }}"
-    enablerepo: "{{ extra_os_repos }}"
+  enablerepo: "{{ extra_os_repos }}"
   when: ansible_os_family == 'RedHat'
