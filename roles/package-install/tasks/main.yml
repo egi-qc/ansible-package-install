@@ -10,7 +10,7 @@
   yum:
     name: "{{ item }}"
     state: latest
+    enablerepo: "{{ extra_os_repos }}"
   with_items:
     - "{{ pkg_list }}"
-  enablerepo: "{{ extra_os_repos }}"
   when: ansible_os_family == 'RedHat'
