@@ -1,6 +1,16 @@
-- name: Install packages
+- name: Install packages (not for RedHat distros)
   package:
     name: "{{ item }}"
     state: latest
   with_items:
     - "{{ pkg_list }}"
+  when: ansible_os_family != 'RedHat'
+
+- name: Install packages using yum (for RedHat distros)
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - "{{ pkg_list }}"
+    enablerepo: "{{ extra_os_repos }}"
+  when: ansible_os_family == 'RedHat'
